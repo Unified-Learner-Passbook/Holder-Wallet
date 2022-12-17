@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
   const handleClick = () => {
 
-    // Login user from email and password here
+    // Login user from email and password here by FusionAuth
 
     navigate("/otp");
   };

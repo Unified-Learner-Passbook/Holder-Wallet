@@ -1,28 +1,29 @@
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
+  const [aadhaar, setAadhaar] = useState("");
+  // const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const handleClick = () => {
 
-    const jsonvar = {
-      email,
-      password
+  const handleClick = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    // Create user from email and password here
+    try {
+      const res = await axios.post('http://localhost:3001/kyc/register', {
+        aadhaar
+        // password
+      });
+      if(res){
+        navigate('/otp');
+      }
+    } catch (err) {
+      console.log(err);
     }
 
-    // Create user from email and password here
-    fetch('https://localhost:3001/kyc/register/', {  // Enter your IP address here
-      method: 'POST', 
-      mode: 'cors', 
-      body: JSON.stringify(jsonvar) // body data type must match "Content-Type" header
-
-    })
-
-    navigate("/otp");
   };
+
   return (
     <div className="flex items-center min-h-screen p-4 bg-gray-100 justify-center">
       <div
@@ -35,7 +36,7 @@ const Register = () => {
             <a href="#">Holder Wallet</a>
           </div>
           <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
-            With the power of this wallet, you can now view your credentials at one place 
+            With the power of this wallet, you can now view your credentials at one place
           </p>
           <p className="mt-6 text-sm text-center text-gray-300">
             Read our <a href="" className="underline">terms</a> and <a href="#" className="underline">conditions</a>
@@ -45,16 +46,16 @@ const Register = () => {
           <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Registration</h3>
           <form action="#" className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-1">
-              <label htmlFor="email" className="text-sm font-semibold text-gray-500">Email address</label>
+              <label htmlFor="email" className="text-sm font-semibold text-gray-500">Aadhaar Number</label>
               <input
-                type="email"
-                id="email"
-                onChange={(e) => setEmail(e.target.value)}
+                type="aadhaar"
+                id="aadhaar"
+                onChange={(e) => setAadhaar(e.target.value)}
                 autoFocus
                 className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-4/6 m-auto"
               />
             </div>
-            <div className="flex flex-col space-y-1">
+            {/* <div className="flex flex-col space-y-1">
               <label htmlFor="password" className="text-sm font-semibold text-gray-500">Password</label>
               <input
                 type="password"
@@ -62,7 +63,7 @@ const Register = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-4/6 m-auto"
               />
-            </div>
+            </div> */}
             <div>
               <button
                 type="submit"
