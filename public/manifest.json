@@ -18,6 +18,12 @@
       "sizes": "512x512"
     }
   ],
+  "credential_handler": {
+    "url": "/wallet-worker.html",
+    "enabledTypes": [
+      "VerifiablePresentation"
+    ]
+  },
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
