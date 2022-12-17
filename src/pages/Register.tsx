@@ -8,7 +8,18 @@ const Register = () => {
   const navigate = useNavigate();
   const handleClick = () => {
 
+    const jsonvar = {
+      email,
+      password
+    }
+
     // Create user from email and password here
+    fetch('https://localhost:3001/kyc/register/', {  // Enter your IP address here
+      method: 'POST', 
+      mode: 'cors', 
+      body: JSON.stringify(jsonvar) // body data type must match "Content-Type" header
+
+    })
 
     navigate("/otp");
   };
@@ -38,8 +49,7 @@ const Register = () => {
               <input
                 type="email"
                 id="email"
-                value={email}
-                onChange={() => setEmail(email)}
+                onChange={(e) => setEmail(e.target.value)}
                 autoFocus
                 className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-4/6 m-auto"
               />
@@ -49,8 +59,7 @@ const Register = () => {
               <input
                 type="password"
                 id="password"
-                value={password}
-                onChange={() => setPassword(password)}
+                onChange={(e) => setPassword(e.target.value)}
                 className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-4/6 m-auto"
               />
             </div>
