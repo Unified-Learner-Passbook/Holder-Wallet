@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import walletImage from '../wallet-img.png'
 
 const Register = () => {
   const [aadhaar, setAadhaar] = useState("");
@@ -25,7 +26,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center min-h-screen p-4 bg-gray-100 justify-center">
+    <div className="flex items-center min-h-screen p-4 bg-gray-200 justify-center">
       <div
         className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 w-[80vw] h-[80vh]"
       >
@@ -35,14 +36,12 @@ const Register = () => {
           <div className="my-3 text-4xl font-bold tracking-wider text-center">
             <a href="#">Holder Wallet</a>
           </div>
-          <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
-            With the power of this wallet, you can now view your credentials at one place
-          </p>
+          <img className="w-[65%] m-auto" src={walletImage}/>
           <p className="mt-6 text-sm text-center text-gray-300">
             Read our <a href="" className="underline">terms</a> and <a href="#" className="underline">conditions</a>
           </p>
         </div>
-        <div className="p-5 bg-white md:flex-1">
+        <div className="p-5 bg-white md:flex-1 m-auto">
           <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Registration</h3>
           <form action="#" className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-1">
