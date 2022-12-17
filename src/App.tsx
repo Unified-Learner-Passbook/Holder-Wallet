@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Otp from "./pages/Otp";
 import Register from "./pages/Register";
+import Login from "./pages/Login";
 
 // const credentialQuery:any = {
 //   // "web" means to ask the user to select a credential handler, aka
@@ -69,6 +70,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/otp" element={<Otp />} />
           <Route path="/home" element={<Home />} />
         </Routes>

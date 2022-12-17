@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
   const handleClick = () => {
 
-    // Create user from email and password here
+    // Login user from email and password here
 
     navigate("/otp");
   };
@@ -31,7 +31,7 @@ const Register = () => {
           </p>
         </div>
         <div className="p-5 bg-white md:flex-1">
-          <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Registration</h3>
+          <h3 className="my-4 text-2xl font-semibold text-gray-700">Account Login</h3>
           <form action="#" className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-1">
               <label htmlFor="email" className="text-sm font-semibold text-gray-500">Email address</label>
@@ -60,9 +60,9 @@ const Register = () => {
                 onClick={handleClick}
                 className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-blue-500 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-blue-200 focus:ring-4 w-7/12 m-auto"
               >
-                Register
+                Login
               </button>
-              <p>Already have an account? <a className='text-blue-600 hover:underline' href="/login">Login here.</a></p>
+              <p>Do not have an account? <a className='text-blue-600 hover:underline' href="/">Register here.</a></p>
             </div>
           </form>
         </div>
@@ -71,4 +71,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
