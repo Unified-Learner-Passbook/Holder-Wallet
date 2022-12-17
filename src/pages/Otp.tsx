@@ -11,7 +11,7 @@ const Otp = () => {
 
   const handleSubmit = async () => {
     try{
-      const res = await axios.post('https://localhost:3001/kyc/verifyRegistrationOtp', {
+      const res = await axios.post('https://localhost:3001/kyc/register', {
       otp,
       name,
       password,

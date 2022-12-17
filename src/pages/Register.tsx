@@ -12,7 +12,7 @@ const Register = () => {
     e.preventDefault();
     // Create user from email and password here
     try {
-      const res = await axios.post('http://localhost:3001/kyc/register', {
+      const res = await axios.post('http://localhost:3001/kyc/triggerKyc', {
         aadhaar
         // password
       });
