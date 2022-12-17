@@ -1,5 +1,11 @@
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/otp");
+  };
   return (
     <>
       <div>Registration</div>
@@ -21,6 +27,7 @@ const Register = () => {
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4"
           type="submit"
+          onClick={handleClick}
         >
           Register
         </button>

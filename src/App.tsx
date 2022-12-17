@@ -69,7 +69,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Register />} />
-          <Route path="/login" element={<Otp />} />
+          <Route path="/otp" element={<Otp />} />
           <Route path="/home" element={<Home />} />
         </Routes>
       </BrowserRouter>
