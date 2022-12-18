@@ -45,25 +45,28 @@ import Login from "./pages/Login";
 
 function App() {
   useEffect(() => {
-    // const getWallet = async () => {
-    //   // await CredentialHandlerPolyfill.loadOnce();
-    //   // console.log("Ready to work with credentials!");
-    //   const polyfill = await window.credentialHandlerPolyfill.loadOnce();
-    //   const { CredentialManager, CredentialHandlers } = polyfill;
-    //   const webCredential = await navigator.credentials.get(credentialQuery);
-    //   if(!webCredential) {
-    //     console.log('no credentials received');
-    //   }
-    //   const result = await CredentialManager.requestPermission();
-    //   // if (result !== "granted") {
-    //   //   throw new Error("Permission denied.");
-    //   // }
-    //   console.log("polyfill", polyfill);
-    //   console.log("result", result);
-    //   // await WebCredentialHandler.installHandler();
-    //   // console.log("Wallet installed.");
-    // };
-    // getWallet();
+    const getWallet = async () => {
+      // await CredentialHandlerPolyfill.loadOnce();
+      // console.log("Ready to work with credentials!");
+      // const polyfill = await window.credentialHandlerPolyfill.loadOnce();
+      // const webCredential = await navigator.credentials.get(credentialQuery);
+      // if(!webCredential) {
+      //   console.log('no credentials received');
+      // }
+      // const result = await CredentialManager.requestPermission();
+      // // if (result !== "granted") {
+      // //   throw new Error("Permission denied.");
+      // // }
+      // console.log("polyfill", polyfill);
+      // console.log("result", result);
+      // try {
+      //   await window.WebCredentialHandler.installHandler();
+      //   console.log("Wallet installed.");
+      // } catch (e) {
+      //   console.error("Wallet installation failed", e);
+      // }
+    };
+    getWallet();
   }, []);
   return (
     <div className="App">
