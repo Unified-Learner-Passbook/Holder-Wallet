@@ -1,6 +1,10 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Holder Wallet",
+  "name": "Holder Wallet App",
+  "credential_handler": {
+    "url": "/wallet-worker.html",
+    "enabledTypes": ["VerifiablePresentation"]
+  },
   "icons": [
     {
       "src": "favicon.ico",
