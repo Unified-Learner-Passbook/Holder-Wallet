@@ -26,7 +26,7 @@ const Otp = () => {
   }
 
   return (
-    <div className="text-xl">
+    <div className="text-xl text-center">
       <h1>Enter Your OTP</h1>
       <div className="inputs justify-center items-center flex flex-col w-[300px] m-auto">
         <input

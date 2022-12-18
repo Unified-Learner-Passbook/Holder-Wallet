@@ -12,11 +12,11 @@ const Login = () => {
     navigate("/otp");
   };
   return (
-    <div className="flex items-center min-h-screen p-32 bg-gray-100 justify-center">
+    <div className="flex items-center text-center min-h-screen p-32 bg-gray-100 justify-center">
       <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 w-[80vw] h-[80vh]">
         <div className="p-4 py-6 text-white bg-blue-500 md:w-100 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly">
           <div className="my-3 text-4xl font-bold tracking-wider text-center">
-            <a href="#">Holder Wallet</a>
+            <p>Holder Wallet</p>
           </div>
           <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
             With the power of this wallet, you can now view your credentials at
@@ -24,20 +24,20 @@ const Login = () => {
           </p>
           <p className="mt-6 text-sm text-center text-gray-300">
             Read our{" "}
-            <a href="" className="underline">
+            <p className="underline">
               terms
-            </a>{" "}
+            </p>{" "}
             and{" "}
-            <a href="#" className="underline">
+            <p className="underline">
               conditions
-            </a>
+            </p>
           </p>
         </div>
         <div className="p-5 bg-white md:flex-1">
           <h3 className="my-4 text-2xl font-semibold text-gray-700">
             Account Login
           </h3>
-          <form action="#" className="flex flex-col space-y-5">
+          <form className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-1">
               <label
                 htmlFor="email"

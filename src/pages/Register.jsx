@@ -26,7 +26,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center min-h-screen">
+    <div className="text-center flex items-center min-h-screen">
       <div
         className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 w-[80vw] h-[100vh]"
       >
@@ -34,11 +34,11 @@ const Register = () => {
           className="p-32 py-6 text-white bg-blue-500 md:w-100 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
         >
           <div className="my-3 text-4xl font-bold tracking-wider text-center">
-            <a href="#">Holder Wallet</a>
+            <p>Holder Wallet</p>
           </div>
-          <img className="w-[65%] m-auto" src={walletImage}/>
+          <img className="w-[65%] m-auto" src={walletImage} alt='wallet-img'/>
           <p className="mt-6 text-sm text-center text-gray-300">
-            Read our <a href="" className="underline">terms</a> and <a href="#" className="underline">conditions</a>
+            Read our <p className="underline">terms</p> and <p className="underline">conditions</p>
           </p>
         </div>
         <div className="p-5 bg-white md:flex-1 m-auto">
