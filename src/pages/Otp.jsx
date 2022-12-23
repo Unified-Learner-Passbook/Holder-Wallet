@@ -6,7 +6,7 @@ const Otp = () => {
   const [otp, setOtp] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  const [aadhaar, setAadhaar] = useState("");
+  // const [aadhaar, setAadhaar] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
@@ -15,7 +15,7 @@ const Otp = () => {
       otp,
       name,
       password,
-      aadhaar
+      // aadhaar
     })
     if(res){
       navigate('/login');
@@ -26,9 +26,9 @@ const Otp = () => {
   }
 
   return (
-    <div className="text-xl text-center">
+    <div className="text-xl text-center md:w-[40vw] sm:w-[50vw] m-auto mt-20 p-10 rounded-lg	shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
       <h1>Enter Your OTP</h1>
-      <div className="inputs justify-center items-center flex flex-col w-[300px] m-auto">
+      <div className="items-center flex flex-col w-[300px] m-auto">
         <input
           className="border-2 m-2 p-1 text-center"
           value={otp}
@@ -52,15 +52,15 @@ const Otp = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <h1>Aadhaar</h1>
+        {/* <h1>Aadhaar</h1>
         <input
           type="id"
           className="border-2 m-2 p-1"
           value={aadhaar}
           onChange={(e) => setAadhaar(e.target.value)}
           required
-        />
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-2 rounded" onClick={handleSubmit}>Register</button>
+        /> */}
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-4 rounded" onClick={handleSubmit}>Register</button>
       </div>
     </div>
   );
