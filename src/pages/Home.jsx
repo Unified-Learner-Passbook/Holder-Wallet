@@ -10,7 +10,7 @@ const Home = () => {
     encodeURIComponent(window.location.origin);
 
   const WALLET_LOCATION = window.location.origin + '/';
-  const workerUrl = WALLET_LOCATION + 'wallet-worker.html';
+  // const workerUrl = WALLET_LOCATION + 'wallet-worker.html';
 
   // const credentialQuery = {
   //   // "web" means to ask the user to select a credential handler, aka
@@ -222,7 +222,7 @@ const Home = () => {
       }
     };
     installWallet();
-  }, []);
+  });
 
   // 3001/did/resolve/id // to resolve a did into document
 
