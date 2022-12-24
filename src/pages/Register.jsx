@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import walletImage from '../wallet-img.png';
+import walletImage from '../wallet-icon.png';
 
 const Register = () => {
   const [aadhaar, setAadhaar] = useState('');
