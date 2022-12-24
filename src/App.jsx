@@ -6,6 +6,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import WalletWorker from './pages/WalletWorker';
 import WalletUiStore from './pages/WalletUiStore';
+import WalletUiGet from './pages/WalletUiGet';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Route path='/otp' element={<Otp />} />
           <Route path='/home' element={<Home />} />
           <Route path='/wallet-worker' element={<WalletWorker />} />
-          <Route path='/wallet-ui-get' element={<WalletWorker />} />
+          <Route path='/wallet-ui-get' element={<WalletUiGet />} />
           <Route path='/wallet-ui-store' element={<WalletUiStore/>} />
         </Routes>
       </BrowserRouter>

@@ -13,6 +13,10 @@ const WalletUiStore = () => {
   function loadCurrentUser() {
     return Cookies.get('username') || '';
   }
+  function saveCurrentUser(name) {
+    console.log('Setting login cookie.');
+    Cookies.set('username', name, { path: '', secure: true, sameSite: 'None' });
+  }
   function resetCurrentUser() {
     console.log('Clearing login cookie.');
     Cookies.remove('username', { path: '' });
@@ -95,8 +99,11 @@ const WalletUiStore = () => {
       const vc = Array.isArray(vp.verifiableCredential)
         ? vp.verifiableCredential[0]
         : vp.verifiableCredential;
+      let issuer = '';
+      if (typeof vc.issuer === 'object') issuer = vc.issuer.id;
+      else issuer = vc.issuer;
       addToWalletDisplay({
-        text: `${getCredentialType(vc)} from ${vc.issuer}`,
+        text: `${getCredentialType(vc)} from ${issuer}`,
         vc,
         button: shareButton,
       });
@@ -148,16 +155,24 @@ const WalletUiStore = () => {
       ? vp.verifiableCredential[0]
       : vp.verifiableCredential;
     document.getElementById('credentialType').innerHTML = getCredentialType(vc);
-    document.getElementById('credentialIssuer').innerHTML = vc.issuer;
+    if (typeof vc.issuer === 'object')
+      document.getElementById('credentialIssuer').innerHTML = vc.issuer.id;
+    else document.getElementById('credentialIssuer').innerHTML = vc.issuer;
 
     // Set up the event handlers for the buttons
     document.getElementById('cancelButton').addEventListener('click', () => {
       returnToUser(event, null); // Do nothing, close the CHAPI window
     });
 
+    document.getElementById('downloadButton').addEventListener('click', () => {
+      const link = document.createElement('a');
+      link.href = credential;
+      link.download = `${vc}.json`;
+    });
+
     document.getElementById('confirmButton').addEventListener('click', () => {
       document.getElementById('userArea').classList.remove('hidden');
-      document.getElementById('confirm').classList.add('hidden');
+      // document.getElementById('confirm').classList.add('hidden');
 
       storeInWallet(credential.data); // in mock-user-management.js
       refreshUserArea();
@@ -191,6 +206,11 @@ const WalletUiStore = () => {
       document.addEventListener('DOMContentLoaded', fn);
     }
   }
+  function login() {
+    saveCurrentUser('JaneDoe');
+    refreshUserArea();
+  }
+
   function logout() {
     resetCurrentUser();
     clearWalletDisplay();
@@ -202,7 +222,7 @@ const WalletUiStore = () => {
     CredentialHandlerPolyfill.loadOnce(MEDIATOR).then(handleStoreEvent);
 
     onDocumentReady(() => {
-      // document.getElementById('loginButton').addEventListener('click', login);
+      document.getElementById('loginButton').addEventListener('click', login);
       document.getElementById('logoutButton').addEventListener('click', logout);
       refreshUserArea();
     });
@@ -210,8 +230,8 @@ const WalletUiStore = () => {
 
   return (
     <div className='container'>
-      <div className='card-panel hidden' id='logged-in'>
-        <div id='confirm'>
+      <div className='card-panel hide' id='logged-in'>
+        <div id='confirm' className='block'>
           <h2>Learner Application</h2>
           <p>
             A credential has been issued to you by Christ University for
@@ -238,7 +258,7 @@ const WalletUiStore = () => {
           </button>
           <button
             className='text-white bg-green-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 mt-2'
-            id='cancelButton'>
+            id='downloadButton'>
             Download
           </button>
         </div>
@@ -268,7 +288,7 @@ const WalletUiStore = () => {
         </div>
       </div>
 
-      <div className='card-panel hidden' id='logged-out'>
+      <div className='card-panel hide' id='logged-out'>
         <p>In order to store a credential:</p>
 
         <ol>
@@ -292,4 +312,3 @@ const WalletUiStore = () => {
 };
 
 export default WalletUiStore;
-
