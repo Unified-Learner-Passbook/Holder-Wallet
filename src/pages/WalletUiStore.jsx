@@ -206,6 +206,7 @@ const WalletUiStore = () => {
       document.addEventListener('DOMContentLoaded', fn);
     }
   }
+  
   function login() {
     saveCurrentUser('JaneDoe');
     refreshUserArea();

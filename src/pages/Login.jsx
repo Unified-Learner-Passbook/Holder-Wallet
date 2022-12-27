@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -8,9 +9,15 @@ const Login = () => {
   const navigate = useNavigate();
   const handleClick = () => {
     // Login user from email and password here by FusionAuth
-
-    navigate("/otp");
+    saveCurrentUser('JaneDoe');
+    navigate("/home");
   };
+
+  function saveCurrentUser(name) {
+    console.log('Setting login cookie.');
+    Cookies.set('username', name, { path: '', secure: true, sameSite: 'None' });
+  }
+
   return (
     <div className="flex items-center text-center min-h-screen p-32 bg-gray-100 justify-center">
       <div className="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 w-[80vw] h-[80vh]">
