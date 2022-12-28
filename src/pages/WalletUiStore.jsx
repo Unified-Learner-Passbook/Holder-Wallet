@@ -236,8 +236,8 @@ const WalletUiStore = () => {
 
   return (
     <div className='container'>
-      <div className='card-panel hide' id='logged-in'>
-        <div id='confirm' className='block'>
+      <div className='card-panel hidden' id='logged-in'>
+        <div id='confirm'>
           <h2>Learner Application</h2>
           <p>
             A credential has been issued to you by Christ University for
@@ -294,7 +294,7 @@ const WalletUiStore = () => {
         </div>
       </div>
 
-      <div className='card-panel hide' id='logged-out'>
+      <div className='card-panel hidden' id='logged-out'>
         <p>In order to store a credential:</p>
 
         <ol>

@@ -197,8 +197,8 @@ const WalletUiGet = () => {
     <div className='container'>
       <h1>Learner Application</h1>
 
-      <div className='card-panel hide' id='logged-in'>
-        <div id='confirm' className='block'>
+      <div className='card-panel hidden' id='logged-in'>
+        <div id='confirm'>
           <p>
             Origin <span id='requestOrigin'></span> is requesting information:
           </p>
@@ -223,7 +223,7 @@ const WalletUiGet = () => {
         </div>
       </div>
 
-      <div className='card-panel hide' id='logged-out'>
+      <div className='card-panel hidden' id='logged-out'>
         <p>In order to share a credential with the requesting party:</p>
 
         <ol>
