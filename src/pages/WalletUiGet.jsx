@@ -198,7 +198,7 @@ const WalletUiGet = () => {
       <h1>Learner Application</h1>
 
       <div className='card-panel hide' id='logged-in'>
-        <div id='confirm'>
+        <div id='confirm' className='block'>
           <p>
             Origin <span id='requestOrigin'></span> is requesting information:
           </p>

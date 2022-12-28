@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import walletImage from '../wallet-icon.png';
@@ -17,6 +18,7 @@ const Register = () => {
         // password
       });
       if (res) {
+        Cookies.set('aadhaar', aadhaar, { path: '', secure: true, sameSite: 'None' });
         navigate('/otp');
       }
     } catch (err) {

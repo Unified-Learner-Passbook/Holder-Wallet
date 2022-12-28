@@ -1,23 +1,25 @@
 import { useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 const Otp = () => {
   const [otp, setOtp] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
-  // const [aadhaar, setAadhaar] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
+    const aadhaar = Cookies.get('aadhaar');
     try{
       const res = await axios.post('https://localhost:3001/kyc/register', {
       otp,
       name,
       password,
-      // aadhaar
+      aadhaar
     })
     if(res){
+      Cookies.remove('aadhaar', { path: '' });
       navigate('/login');
     }
     }catch(err){

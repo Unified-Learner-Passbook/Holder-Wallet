@@ -2,6 +2,7 @@ import * as WebCredentialHandler from 'web-credential-handler';
 import * as CredentialHandlerPolyfill from 'credential-handler-polyfill';
 import { useEffect } from 'react';
 import Cookies from 'js-cookie';
+// import { useNavigate } from 'react-router-dom';
 
 const WalletUiStore = () => {
   const MEDIATOR =
@@ -166,8 +167,12 @@ const WalletUiStore = () => {
 
     document.getElementById('downloadButton').addEventListener('click', () => {
       const link = document.createElement('a');
-      link.href = credential;
-      link.download = `${vc}.json`;
+      let dataStr =
+        'data:text/json;charset=utf-8,' +
+        encodeURIComponent(JSON.stringify(vc));
+      link.href = dataStr;
+      link.download = 'credential.json';
+      link.click();
     });
 
     document.getElementById('confirmButton').addEventListener('click', () => {
@@ -206,7 +211,7 @@ const WalletUiStore = () => {
       document.addEventListener('DOMContentLoaded', fn);
     }
   }
-  
+
   function login() {
     saveCurrentUser('JaneDoe');
     refreshUserArea();
