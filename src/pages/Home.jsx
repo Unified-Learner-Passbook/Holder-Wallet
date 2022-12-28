@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import * as CredentialHandlerPolyfill from 'credential-handler-polyfill';
 import * as WebCredentialHandler from 'web-credential-handler';
 import Cookies from 'js-cookie';
+import Certificate from '../templates/certificate';
 
 const Home = () => {
   const MEDIATOR =
@@ -71,9 +72,9 @@ const Home = () => {
     return JSON.parse(atob(walletContents));
   }
 
-  function clearWalletStorage() {
-    Cookies.remove('walletContents', { path: '' });
-  }
+  // function clearWalletStorage() {
+  //   Cookies.remove('walletContents', { path: '' });
+  // }
 
   function clearWalletDisplay() {
     const contents = document.getElementById('walletContents');
@@ -84,8 +85,12 @@ const Home = () => {
     let li = document.createElement('li');
 
     if (button) {
-      const buttonNode = document.createElement('a');
+      const buttonNode = document.createElement('button');
       buttonNode.setAttribute('id', vc.id);
+      buttonNode.setAttribute(
+        'class',
+        'bg-[#18224E] hover:bg-[#111837] text-white font-bold py-1 px-4 rounded w-fit'
+      );
       buttonNode.appendChild(document.createTextNode(button.text));
       li.appendChild(buttonNode);
     }
@@ -107,9 +112,15 @@ const Home = () => {
           verifiableCredential: vc,
         };
         console.log('wrapping and returning vc:', vp);
-        button.sourceEvent.respondWith(
-          Promise.resolve({ dataType: 'VerifiablePresentation', data: vp })
-        );
+
+        // code to open credential in new tab
+        // let newtabvp = JSON.stringify(vp, null, 2);
+        // let x = window.open();
+        // x.document.write('<html><body><pre>' + newtabvp + '</pre></body></html>');
+        // x.document.close();
+
+        // code to view certificate
+        document.getElementById('certificate').classList.remove('hidden');
       });
     }
   }
@@ -149,8 +160,8 @@ const Home = () => {
   }
 
   useEffect(() => {
-    if(loadCurrentUser() === ''){
-      alert('Please Login first.')
+    if (loadCurrentUser() === '') {
+      alert('Please Login first.');
       navigate('/login');
       return;
     }
@@ -168,14 +179,27 @@ const Home = () => {
     installWallet();
     onDocumentReady(() => {
       document.getElementById('logoutButton').addEventListener('click', logout);
-      refreshUserArea();
+
+      refreshUserArea({
+        shareButton: {
+          text: 'View',
+        },
+      });
     });
   });
 
   // 3001/did/resolve/id // to resolve a did into document
 
   return (
-    <div className='flex pr-4 bg-[#FF7040] min-h-screen text-left text-white'>
+    <div className='flex pr-4 bg-[#FF7040] min-h-screen max-h-screen text-left text-white'>
+      <div
+        onClick={() =>
+          document.getElementById('certificate').classList.add('hidden')
+        }
+        id='certificate'
+        className='hidden absolute z-10 l-0 r-0 mt-5 w-full'>
+        <Certificate />
+      </div>
       <div className='flex w-full min-h-screen'>
         <div className='flex flex-col bg-[#18224E] w-8/12 md:w-3/12 text-center text-xl font-bold'>
           <div className='mt-4 border-b-4 text-2xl p-4 flex cursor-pointer'>

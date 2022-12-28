@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 
 const Otp = () => {
+  document.body.style= "background-color:#EBEEF7";
   const [otp, setOtp] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -28,11 +29,11 @@ const Otp = () => {
   }
 
   return (
-    <div className="text-xl text-center md:w-[40vw] sm:w-[50vw] m-auto mt-20 p-10 rounded-lg	shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
-      <h1>Enter Your OTP</h1>
-      <div className="items-center flex flex-col w-[300px] m-auto">
+    <div className="bg-white font-medium text-blue-500 text-xl text-center md:w-[40vw] sm:w-[50vw] lg:w-[400px] m-auto mt-20 rounded-lg shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]">
+      <h1 className="pt-10">Enter Your OTP</h1>
+      <div className="flex flex-col w-fit m-auto p-4">
         <input
-          className="border-2 m-2 p-1 text-center"
+          className="outline-blue-500 border-2 m-2 p-1 text-center"
           value={otp}
           onChange={(e) => setOtp(e.target.value)}
           maxLength={4}
@@ -41,7 +42,7 @@ const Otp = () => {
         <h1>Username</h1>
         <input
           type="name"
-          className="border-2 m-2 p-1"
+          className="outline-blue-500 border-2 m-2 p-2"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -49,7 +50,7 @@ const Otp = () => {
         <h1>Password</h1>
         <input
           type="password"
-          className="border-2 m-2 p-1"
+          className="outline-blue-500 border-2 m-2 p-1"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -57,12 +58,14 @@ const Otp = () => {
         {/* <h1>Aadhaar</h1>
         <input
           type="id"
-          className="border-2 m-2 p-1"
+          className="outline-blue-500 border-2 m-2 p-1"
           value={aadhaar}
           onChange={(e) => setAadhaar(e.target.value)}
           required
         /> */}
-        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-4 rounded" onClick={handleSubmit}>Register</button>
+        <div>
+        <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-4 rounded w-fit" onClick={handleSubmit}>Register</button>
+        </div>
       </div>
     </div>
   );
