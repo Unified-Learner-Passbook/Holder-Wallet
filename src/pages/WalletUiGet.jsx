@@ -19,7 +19,7 @@ const WalletUiGet = () => {
 
     const vp = event.credentialRequestOptions.web.VerifiablePresentation;
     const query = Array.isArray(vp.query) ? vp.query[0] : vp.query;
-
+    
     if (!query.type === 'QueryByExample') {
       throw new Error(
         'Only QueryByExample requests are supported in demo wallet.'

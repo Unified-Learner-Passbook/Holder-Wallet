@@ -3,12 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 } */
+@import url('https://fonts.googleapis.com/css2?family=Combo&family=Yatra+One&display=swap');
+@import url(//db.onlinewebfonts.com/c/45f5fadb3dbf0140e10b498c7cb030a6?family=Canterbury);
 .outer-border {
-  width: 80vw;
+  width: 45vw;
   /* height: 100vh; */
   padding: 10px;
   text-align: center;
-  border: 10px solid #252F50;
+  border: 10px solid #951672;
   font-family: 'Lato', sans-serif;
   margin: auto;
 }
@@ -16,41 +18,69 @@
 .inner-dotted-border {
   padding: 10px;
   text-align: center;
-  border: 2px solid #252F50;
+  border: 2px solid #951672;
   /* border-style: dotted; */
 }
 
-.logo{
-  width: 75px;
-}
-
-.certification {
-  font-size: 50px;
+.certification-hin {
+  font-size: 30px;
   font-weight: bold;
-  color: #252F50;
-  font-family: "Times New Roman", Times, serif;
+  color: #951672;
+  font-family: 'Combo', cursive;
+  font-family: 'Yatra One', cursive;
 }
 
+.certification-eng {
+  font-size: 20px;
+  /* font-weight: bold; */
+  color: #951672;
+  font-family: 'Canterbury';
+  src: url('//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.eot');
+  src: url('//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.eot?#iefix')
+      format('embedded-opentype'),
+    url('//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.woff2')
+      format('woff2'),
+    url('//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.woff')
+      format('woff'),
+    url('//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.ttf')
+      format('truetype'),
+    url('//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.svg#Canterbury')
+      format('svg');
+}
+
+.logo {
+  width: 70px;
+}
 
 .certify {
-  font-size: 20px;
-  color: #252F50;
+  font-size: 15px;
+  font-weight: bold;
+  color: #951672;
 }
 
-.diploma{
-  color: #252F50;
-  font-family: "Lucida Handwriting", "Comic Sans", cursive;
+.certify-small {
+  font-size: 10px;
+  font-weight: 700;
+  color: #951672;
+  text-align: left;
+  /* margin-left: 40px; */
+  /* margin-top: 3px; */
+}
+
+.diploma {
+  color: #951672;
+  font-family: 'Lucida Handwriting', 'Comic Sans', cursive;
 }
 
 .name {
   font-size: 30px;
-  color: #252F50;
+  color: #951672;
   border-bottom: 1px solid;
-  font-family: "Lucida Handwriting", "Comic Sans", cursive;
+  font-family: 'Lucida Handwriting', 'Comic Sans', cursive;
 }
 
-.thank{
-  color: #252F50;
+.thank {
+  color: #951672;
 }
 .fs-30 {
   font-size: 30px;
@@ -60,20 +90,20 @@
   font-size: 20px;
 }
 
-.footer{
-display: flex;
-justify-content: space-between;
-margin: 0 4rem;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  /* margin: 0 4rem; */
 }
 
-.date{
+.date {
   display: flex;
   align-self: flex-end;
 }
 
-.date > .fs-20{
-  color: #252F50;
-  font-family: "Lucida Handwriting", "Comic Sans", cursive;
+.date > .fs-20 {
+  color: #951672;
+  /* font-family: "Lucida Handwriting", "Comic Sans", cursive; */
 }
 
 .qr {
@@ -81,10 +111,11 @@ margin: 0 4rem;
   display: flex;
   margin-left: 0.75rem;
   margin-right: 0.75rem;
+  width: 75px;
 }
 
-.sign{
+.sign {
   border-top: 1px solid;
   align-self: flex-end;
-  color: #252F50;
+  color: #951672;
 }

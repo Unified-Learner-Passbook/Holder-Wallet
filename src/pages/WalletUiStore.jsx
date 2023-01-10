@@ -93,7 +93,7 @@ const WalletUiStore = () => {
     if (!walletContents) {
       return addToWalletDisplay({ text: 'none' });
     }
-
+    // console.log(walletContents)
     for (const id in walletContents) {
       const vp = walletContents[id];
       // TODO: Add support for multi-credential VPs
@@ -128,8 +128,12 @@ const WalletUiStore = () => {
 
   function storeInWallet(verifiablePresentation) {
     const walletContents = loadWalletContents() || {};
-    const id = getCredentialId(verifiablePresentation);
+    const id = verifiablePresentation.id
+      ? verifiablePresentation.id
+      : getCredentialId(verifiablePresentation);
     walletContents[id] = verifiablePresentation;
+    // console.log(id)
+    // console.log(walletContents)
 
     // base64 encode the serialized contents (verifiable presentations)
     const serialized = btoa(JSON.stringify(walletContents));
@@ -152,9 +156,15 @@ const WalletUiStore = () => {
 
     // Display the credential details, for confirmation
     const vp = credential.data;
-    const vc = Array.isArray(vp.verifiableCredential)
-      ? vp.verifiableCredential[0]
-      : vp.verifiableCredential;
+    let vc;
+    if (vp.id != null) {
+      vc = vp;
+    } else {
+      vc = Array.isArray(vp.verifiableCredential)
+        ? vp.verifiableCredential[0]
+        : vp.verifiableCredential;
+    }
+    // console.log(vc)
     document.getElementById('credentialType').innerHTML = getCredentialType(vc);
     if (typeof vc.issuer === 'object')
       document.getElementById('credentialIssuer').innerHTML = vc.issuer.id;
@@ -179,7 +189,7 @@ const WalletUiStore = () => {
       document.getElementById('userArea').classList.remove('hidden');
       // document.getElementById('confirm').classList.add('hidden');
 
-      storeInWallet(credential.data); // in mock-user-management.js
+      storeInWallet(credential.data);
       refreshUserArea();
     });
 
@@ -240,8 +250,7 @@ const WalletUiStore = () => {
         <div id='confirm'>
           <h2>Learner Application</h2>
           <p>
-            A credential has been issued to you by Christ University for
-            diploma.
+            A credential has been issued to you by UP Board.
           </p>
 
           <p>

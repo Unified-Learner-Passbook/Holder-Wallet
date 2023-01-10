@@ -5,7 +5,7 @@ import Cookies from 'js-cookie';
 import walletImage from '../wallet-icon.png';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
@@ -14,15 +14,16 @@ const Login = () => {
     // Login user from email and password here by FusionAuth
     let user = null;
     try{
-      user = await axios.post('/api/login', {
-        email,
+      user = await axios.post('https://auth.konnect.samagra.io/api/login', {
+        username,
         password,
-      }); 
+        applicationId: "a789504e-06e5-4213-b326-e6c75a7489e8",
+      }, "kO_ehNNYDrHxu9TrpTEE57GvtfOomP14g1Dd85-POZE_Zcawjpf5k20_"); 
     }catch(err) {
       console.error(err);
     }
     if(!user) saveCurrentUser('JaneDoe');
-    else saveCurrentUser(user.fullName);
+    else saveCurrentUser(username);
     navigate('/home');
   };
 
@@ -50,15 +51,15 @@ const Login = () => {
           <form className='flex flex-col space-y-5'>
             <div className='flex flex-col space-y-1'>
               <label
-                htmlFor='email'
+                htmlFor='name'
                 className='text-sm font-semibold text-gray-500'>
-                Email address
+                Username
               </label>
               <input
-                type='email'
-                id='email'
-                value={email}
-                onChange={() => setEmail(email)}
+                type='name'
+                id='name'
+                value={username}
+                onChange={() => setUsername(username)}
                 autoFocus
                 className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-4/6 m-auto'
               />

@@ -13,7 +13,7 @@ const Otp = () => {
   const handleSubmit = async () => {
     const aadhaar = Cookies.get('aadhaar');
     try{
-      const res = await axios.post('https://localhost:3001/kyc/register', {
+      const res = await axios.post('http://64.227.185.154:3000/kyc/register', {
       otp,
       name,
       password,

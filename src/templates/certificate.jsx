@@ -1,54 +1,274 @@
 import React from 'react';
+// import ReactCurvedText from 'react-curved-text';
 import './style.css';
 
 function certificate(props) {
-  const { name, subject, date } = props;
+  const { name, mother, father, dob, school, date } = props;
   return (
     <div className='outer-border bg-white box-border'>
       <div className='inner-dotted-border'>
+        <span className='certification-hin'>
+          माध्यमिक शिक्षा परिषद्, उत्तर प्रदेश
+        </span>
+        <br />
+        <span className='certification-eng'>
+          Board of High School and Intermediate Education, UP
+        </span>
         <img
           className='logo m-auto'
-          src='https://www.vid.no/site/assets/files/17244/christ-deemed-to-be-university-vid.png'
+          src='https://sarkarinet.com/wp-content/uploads/2020/06/up-board.jpg'
           alt='logo'
         />
-        {/* <br /> */}
-        <span className='certification'>CERTIFICATE OF COMPLETION</span>
+        <span className='certify'>हाईस्कूल परीक्षा - २०२३</span>
         <br />
-        {/* <br /> */}
+        <span className='certify'>High School Examination - 2023</span>
+        <br />
         <span className='certify'>
-          <i>is hereby awarded to</i>
+          प्रमाणपत्र-सह-अंकपत्र (CERTIFICATE-CUM-MARKS SHEET)
         </span>
-        <br />
-        {/* <br /> */}
-        <span className='name'>
-          <b>{name ? name : 'Daniel Vettori'}</b>
-        </span>
-        <br />
-        {/* <br /> */}
-        <span className='certify'>
-          <i>for successfully completing the</i>
-        </span>
-        <br />
-        {/* <br /> */}
-        <span className='fs-30 diploma'>
-          diploma in {subject ? subject : 'Java Developer'}
-        </span>{' '}
-        <br />
-        <br />
-        {/* <span className="fs-20">with score of <b>A+</b></span> <br /><br /> */}
-        <span className='fs-20 thank'>
-          Thank you for demonstrating the type of character and integrity that
-          inspire others
-        </span>{' '}
-        <br />
+
+        <table
+          style={{
+            fontSize: '12px',
+            width: '90%',
+            borderCollapse: 'collapse',
+            color: '#951672',
+            margin: 'auto',
+            borderWidth: '1px',
+            borderColor: '#951672',
+            borderStyle: 'solid',
+          }}>
+          <tr
+            style={{
+              borderWidth: '1px',
+              borderColor: '#951672',
+              borderStyle: 'solid',
+            }}>
+            <th
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+              }}>
+              अनुक्रमांक <br /> Roll No.
+            </th>
+            <th
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+              }}>
+              जनपद/केंद्र/विद्यालय कोड <br /> Distt./Centre/School Code
+            </th>
+            <th
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+              }}>
+              संस्थागत/व्यक्तिगत <br /> Regular / Private
+            </th>
+            <th
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+              }}>
+              परीक्षा प्रवर्ग <br /> Exam. Type
+            </th>
+            <th
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+              }}>
+              प्रमाणपत्र क्रमांक <br /> Certificate No.
+            </th>
+          </tr>
+          <tr style={{ textAlign: 'center' }}>
+            <td
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+                color: 'black',
+                fontWeight: 'bold',
+              }}>
+              2045114
+            </td>
+            <td
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+                color: 'black',
+              }}>
+              55/22779/1595
+            </td>
+            <td
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+                color: 'black',
+              }}>
+              REGULAR
+            </td>
+            <td
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+                color: 'black',
+              }}>
+              FULL EXAM
+            </td>
+            <td
+              style={{
+                borderWidth: '1px',
+                borderColor: '#951672',
+                borderStyle: 'solid',
+                color: 'black',
+              }}>
+              55072496
+            </td>
+          </tr>
+        </table>
+        <p className='certify-small'>
+          प्रमाणित किया जाता है कि (This is to certify that)
+        </p>
+        <p className='certify-small'>
+          परिषद के अभिलेखानुसर (according to the Board's record)-{' '}
+          <span style={{ color: 'black', fontSize: '12px' }}>
+            {name ? name : 'AMIT YADAV'}
+          </span>
+        </p>
+        <p className='certify-small'>
+          आत्मज/आत्मजा श्रीमती (son/daughter of Mrs.)-{' '}
+          <span style={{ color: 'black', fontSize: '12px' }}>
+            {mother ? mother : 'MEERA DEVI'}
+          </span>
+        </p>
+        <p className='certify-small'>
+          एवं श्री (and Mr.)-{' '}
+          <span style={{ color: 'black', fontSize: '12px' }}>
+            {father ? father : 'MUNNA LAL YADAV'}
+          </span>
+        </p>
+        <p className='certify-small'>
+          जिन्की जन्मतिथि (whose date of birth is)-{' '}
+          <span style={{ color: 'black', fontSize: '12px' }}>
+            {dob
+              ? dob
+              : '9th NOVEMBER NINETEEN HUNDRED NINETY NINE (09/11/1999)'}
+          </span>
+        </p>
+        <p className='certify-small'>
+          ने फ़रवरी/मार्च 2023 की हाईस्कूल परीक्षा विद्यालय/केंद्र (has passed
+          High School Examination held in February/March 2023 from
+          School/Centre)-{' '}
+          <span style={{ color: 'black', fontSize: '12px' }}>
+            {school ? school : 'M VACHASPATI I C SULEM SARAI LUCKNOW'}
+          </span>
+        </p>
+
+        <table
+          style={{
+            fontSize: '12px',
+            width: '100%',
+            borderCollapse: 'collapse',
+            color: '#951672',
+            margin: 'auto',
+            borderWidth: '1px',
+            borderColor: '#951672',
+            borderStyle: 'solid',
+          }}>
+          <tr
+            style={{
+              borderWidth: '1px',
+              borderColor: '#951672',
+              borderStyle: 'solid',
+            }}>
+            <th>
+              विषय <br /> Subject
+            </th>
+            <th>
+              अधिक्तम अंक <br /> Max. Marks
+            </th>
+            <th colSpan={2}>
+              प्राप्तांक Obtained Marks
+              <br /> सैदांतिक (Theory) प्रयोगात्मक (Practical)
+            </th>
+            <th>
+              योग <br /> Total
+            </th>
+            <th>
+              ग्रेड <br /> Grade
+            </th>
+            <th>
+              परीक्षाफल <br /> Result
+            </th>
+          </tr>
+          <tr style={{ color: 'black', fontWeight: 'bold' }}>
+            <td style={{ textAlign: 'left' }}>HINDI</td>
+            <td>100</td>
+            <td>42</td>
+            <td>30</td>
+            <td>072</td>
+            <td>B1</td>
+          </tr>
+          <tr style={{ color: 'black', fontWeight: 'bold' }}>
+            <td style={{ textAlign: 'left' }}>ENGLISH</td>
+            <td>100</td>
+            <td>41</td>
+            <td>30</td>
+            <td>071</td>
+            <td>B1</td>
+          </tr>
+          <tr style={{ color: 'black', fontWeight: 'bold' }}>
+            <td style={{ textAlign: 'left' }}>MATHEMATICS</td>
+            <td>100</td>
+            <td>36</td>
+            <td>30</td>
+            <td>066</td>
+            <td>B2</td>
+            <td>PASSED</td>
+          </tr>
+          <tr style={{ color: 'black', fontWeight: 'bold' }}>
+            <td style={{ textAlign: 'left' }}>SCIENCE</td>
+            <td>100</td>
+            <td>23</td>
+            <td>30</td>
+            <td>053</td>
+            <td>C1</td>
+          </tr>
+          <tr style={{ color: 'black', fontWeight: 'bold' }}>
+            <td style={{ textAlign: 'left' }}>SOCIAL SCIENCE</td>
+            <td>100</td>
+            <td>43</td>
+            <td>30</td>
+            <td>073</td>
+            <td>B1</td>
+          </tr>
+          <tr style={{ color: 'black', fontWeight: 'bold' }}>
+            <td style={{ textAlign: 'left' }}>COMPUTER</td>
+            <td>100</td>
+            <td>23</td>
+            <td>30</td>
+            <td>053</td>
+            <td>C1</td>
+          </tr>
+        </table>
+
         <div className='footer'>
           <div className='date'>
-            <span className='certify'>
-              <i>Awarded:</i>
-            </span>
-            <br />
+            <span className='certify-small'>तिथि (Date)-</span>
 
-            <span className='fs-20'> {date ? date : 'xxxxx'}</span>
+            <span
+              style={{ color: 'black', fontSize: '12px', fontWeight: 'bold' }}>
+              {' '}
+              {date ? date : '15th MAY 2023'}
+            </span>
           </div>
           <div className='qr'>
             <img
@@ -56,7 +276,7 @@ function certificate(props) {
               alt='qr'
             />
           </div>
-          <span className='sign'>Dean, Christ Univeristy</span>
+          <span className='sign'>सचिव (Secretary)</span>
         </div>
       </div>
     </div>
