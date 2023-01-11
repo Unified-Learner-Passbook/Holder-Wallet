@@ -22,7 +22,7 @@ const Login = () => {
     }catch(err) {
       console.error(err);
     }
-    if(!user) saveCurrentUser('JaneDoe');
+    if(!user) saveCurrentUser('Aakash');
     else saveCurrentUser(username);
     navigate('/home');
   };
@@ -37,8 +37,9 @@ const Login = () => {
       <div className='flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 w-[80vw] h-[100vh] m-auto'>
         <div className='p-32 py-6 text-white bg-blue-500 md:w-100 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly'>
           <div className='my-3 text-4xl font-bold tracking-wider text-center'>
-            <p>Holder Wallet</p>
+            <p>ULP Wallet</p>
           </div>
+          
           <img className='w-[65%] m-auto' src={walletImage} alt='wallet-img' />
           <p className='mt-6 text-sm text-gray-300'>
             Read our terms and conditions

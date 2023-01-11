@@ -140,7 +140,7 @@ function certificate(props) {
         <p className='certify-small'>
           परिषद के अभिलेखानुसर (according to the Board's record)-{' '}
           <span style={{ color: 'black', fontSize: '12px' }}>
-            {name ? name : 'AMIT YADAV'}
+            {name ? name : 'AAKASH'}
           </span>
         </p>
         <p className='certify-small'>
