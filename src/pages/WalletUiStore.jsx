@@ -223,7 +223,7 @@ const WalletUiStore = () => {
   }
 
   function login() {
-    saveCurrentUser('JaneDoe');
+    saveCurrentUser('Aakash');
     refreshUserArea();
   }
 

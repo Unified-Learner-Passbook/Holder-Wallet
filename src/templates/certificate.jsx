@@ -5,17 +5,17 @@ import './style.css';
 function certificate(props) {
   const { name, mother, father, dob, school, date } = props;
   return (
-    <div className='outer-border bg-white box-border'>
+    <div className='outer-border bg-white box-border md:w-[45vw]'>
       <div className='inner-dotted-border'>
-        <span className='certification-hin'>
+        <span className='certification-hin md:text-[40px]'>
           माध्यमिक शिक्षा परिषद्, उत्तर प्रदेश
         </span>
         <br />
-        <span className='certification-eng'>
+        <span className='certification-eng md:text-[20px]'>
           Board of High School and Intermediate Education, UP
         </span>
         <img
-          className='logo m-auto'
+          className='logo m-auto w-[50px] md:w-[70px]'
           src='https://sarkarinet.com/wp-content/uploads/2020/06/up-board.jpg'
           alt='logo'
         />
@@ -29,7 +29,7 @@ function certificate(props) {
 
         <table
           style={{
-            fontSize: '12px',
+            fontSize: '9px',
             width: '90%',
             borderCollapse: 'collapse',
             color: '#951672',
@@ -146,13 +146,13 @@ function certificate(props) {
         <p className='certify-small'>
           आत्मज/आत्मजा श्रीमती (son/daughter of Mrs.)-{' '}
           <span style={{ color: 'black', fontSize: '12px' }}>
-            {mother ? mother : 'MEERA DEVI'}
+            {mother ? mother : 'SONIYA'}
           </span>
         </p>
         <p className='certify-small'>
           एवं श्री (and Mr.)-{' '}
           <span style={{ color: 'black', fontSize: '12px' }}>
-            {father ? father : 'MUNNA LAL YADAV'}
+            {father ? father : 'BALLE'}
           </span>
         </p>
         <p className='certify-small'>
@@ -174,7 +174,7 @@ function certificate(props) {
 
         <table
           style={{
-            fontSize: '12px',
+            fontSize: '9px',
             width: '100%',
             borderCollapse: 'collapse',
             color: '#951672',

@@ -35,7 +35,7 @@ const Login = () => {
   return (
     <div className='flex items-center text-center min-h-screen'>
       <div className='flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 w-[80vw] h-[100vh] m-auto'>
-        <div className='p-32 py-6 text-white bg-blue-500 md:w-100 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly'>
+        <div className='lg:p-32 py-6 text-white bg-blue-500 md:w-100 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly'>
           <div className='my-3 text-4xl font-bold tracking-wider text-center'>
             <p>ULP Wallet</p>
           </div>
@@ -60,7 +60,7 @@ const Login = () => {
                 type='name'
                 id='name'
                 value={username}
-                onChange={() => setUsername(username)}
+                onChange={(e) => setUsername(e.target.value)}
                 autoFocus
                 className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-4/6 m-auto'
               />
@@ -75,7 +75,7 @@ const Login = () => {
                 type='password'
                 id='password'
                 value={password}
-                onChange={() => setPassword(password)}
+                onChange={(e) => setPassword(e.target.value)}
                 className='px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-4/6 m-auto'
               />
             </div>

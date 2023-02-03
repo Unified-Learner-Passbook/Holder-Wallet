@@ -173,7 +173,7 @@ const WalletUiGet = () => {
   }
 
   function login() {
-    saveCurrentUser('JaneDoe');
+    saveCurrentUser('Aakash');
     refreshUserArea();
   }
 

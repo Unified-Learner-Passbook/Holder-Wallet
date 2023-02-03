@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Combo&family=Yatra+One&display=swap');
 @import url(//db.onlinewebfonts.com/c/45f5fadb3dbf0140e10b498c7cb030a6?family=Canterbury);
 .outer-border {
-  width: 45vw;
+  /* width: 45vw; */
   /* height: 100vh; */
   padding: 10px;
   text-align: center;
@@ -23,7 +23,7 @@
 }
 
 .certification-hin {
-  font-size: 30px;
+  /* font-size: 30px; */
   font-weight: bold;
   color: #951672;
   font-family: 'Combo', cursive;
@@ -31,10 +31,10 @@
 }
 
 .certification-eng {
-  font-size: 20px;
+  /* font-size: 20px; */
   /* font-weight: bold; */
   color: #951672;
-  font-family: 'Canterbury';
+  font-family: 'Canterbury', 'Times New Roman', Times, serif;
   src: url('//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.eot');
   src: url('//db.onlinewebfonts.com/t/45f5fadb3dbf0140e10b498c7cb030a6.eot?#iefix')
       format('embedded-opentype'),
@@ -48,10 +48,6 @@
       format('svg');
 }
 
-.logo {
-  width: 70px;
-}
-
 .certify {
   font-size: 15px;
   font-weight: bold;
@@ -59,7 +55,7 @@
 }
 
 .certify-small {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   color: #951672;
   text-align: left;

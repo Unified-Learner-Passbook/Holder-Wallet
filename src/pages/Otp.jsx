@@ -11,21 +11,24 @@ const Otp = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    const aadhaar = Cookies.get('aadhaar');
-    try{
-      const res = await axios.post('http://64.227.185.154:3000/kyc/register', {
-      otp,
-      name,
-      password,
-      aadhaar
-    })
-    if(res){
-      Cookies.remove('aadhaar', { path: '' });
-      navigate('/login');
+    // const aadhaar = Cookies.get('aadhaar');
+    if(otp.length === 4){
+      navigate('/login')
     }
-    }catch(err){
-      console.log(err);
-    }
+    // try{
+    //   const res = await axios.post('http://64.227.185.154:3000/kyc/register', {
+    //   otp,
+    //   name,
+    //   password,
+    //   aadhaar
+    // })
+    // if(res){
+    //   Cookies.remove('aadhaar', { path: '' });
+    //   navigate('/login');
+    // }
+    // }catch(err){
+    //   console.log(err);
+    // }
   }
 
   return (
